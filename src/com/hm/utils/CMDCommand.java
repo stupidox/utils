@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class CMDCommand {
     public static void main(String[] args) throws Exception {
-        File dir = new File("E:\\private\\videos");
+        File dir = new File("E:\\private\\videos\\cmd");
         File[] files = dir.listFiles();
         for (File f : files) {
             loop(f, f.getName());
