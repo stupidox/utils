@@ -36,6 +36,11 @@ public class Rename {
         // System.out.println(path);
         Path filePath = Paths.get(path);
         File file = filePath.toFile();
+        if (!file.exists()) {
+            System.out.println(path + " 文件不存在!");
+            System.out.println();
+            return;
+        }
         File[] files = file.listFiles();
         List<File> list = Arrays.asList(files);
         list.sort(Comparator.comparing(File::getName));
@@ -56,5 +61,6 @@ public class Rename {
                 f.renameTo(new File(f.getParent(), name));
             }
         }
+        System.out.println();
     }
 }
